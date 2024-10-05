@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otago Test - ผลการทดสอบ</title>
+    <link rel="stylesheet" href="/style3.css"> <!-- เชื่อมโยง CSS ของคุณ -->
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <img src="/logo.png" alt="Otago Logo">
+            </div>
+        </header>
+
+        <main class="content">
+            <h2>นี่คือผลการทดสอบของคุณ</h2>
+
+            <div class="results">
+                <h3>ผลการประเมิน</h3>
+                <p id="strength-evaluation">1. ความแข็งแรงของกล้ามเนื้อขาอยู่ในเกณฑ์...<span id="strength-grade">ยังไม่มีข้อมูล</span>... แสดงว่า...<span id="strength-message">ยังไม่มีข้อมูล</span>...</p>
+                <p id="balance-evaluation">2. ความสามารถในการทรงตัวอยู่ในเกณฑ์...<span id="balance-grade">ยังไม่มีข้อมูล</span>... แสดงว่า...<span id="balance-message">ยังไม่มีข้อมูล</span>...</p>
+
+                <h3>คะแนนการทดสอบ</h3>
+                <p>เวลาที่ใช้: <span id="time-display">ยังไม่มีข้อมูล</span></p> <!-- ค่าเริ่มต้นเมื่อไม่มีข้อมูล -->
+                <p>จำนวนครั้งที่ทำสำเร็จ: <span id="result-display">ยังไม่มีข้อมูล</span></p> <!-- แสดงจำนวนครั้งที่ทำสำเร็จ -->
+            </div>
+
+            <button onclick="location.href='/index4';" class="next-btn">ถัดไป</button> <!-- ปุ่มถัดไป -->
+        </main>
+    </div>
+
+    <script>
+        // รับค่าที่ส่งมาจาก index2.html
+        const urlParams = new URLSearchParams(window.location.search);
+        const time = urlParams.get('time'); // รับค่าตัวเลขจากฟอร์ม
+        const result = urlParams.get('result'); // รับค่าจำนวนครั้งที่ทำสำเร็จ
+
+        // แสดงเวลาและจำนวนครั้งที่ทำสำเร็จ
+        document.getElementById('time-display').textContent = time ? time + " วินาที" : "ยังไม่มีข้อมูล";
+        document.getElementById('result-display').textContent = result ? result : "ยังไม่มีข้อมูล";
+
+        // ตรวจสอบและแปลงค่าผลลัพธ์จาก string เป็น number
+        const numericResult = parseFloat(result); 
+        const G = parseFloat(time); 
+
+        // การประเมินความแข็งแรงของกล้ามเนื้อขา (ใช้เวลาในการทดสอบ)
+        let strengthGrade = '';
+        let strengthMessage = '';
+        
+        if (!isNaN(G)) {
+            if (G < 8) { // น้อยกว่า 8 เป็น 'ดีมาก'
+                strengthGrade = 'เสี่ยง';
+                strengthMessage = 'กล้ามเนื้อขาไม่แข็งแรง มีความเสี่ยงต่อการหกล้ม';
+            } else if (G === 8) { // เท่ากับ 8 เป็น 'ดี'
+                strengthGrade = 'ดี';
+                strengthMessage = 'กล้ามเนื้อขาแข็งแรง ไม่มีความเสี่ยงต่อการหกล้ม';
+            } else {
+                strengthGrade = 'ดีมาก';
+                strengthMessage = 'กล้ามเนื้อขาแข็งแรงมาก ไม่มีความเสี่ยงต่อการหกล้ม ';
+            }
+        } else {
+            strengthGrade = 'ยังไม่มีข้อมูล';
+            strengthMessage = 'ยังไม่มีข้อมูล';
+        }
+
+        // การประเมินความสามารถในการทรงตัว (ใช้จำนวนครั้งที่ทำสำเร็จ)
+        let balanceGrade = '';
+        let balanceMessage = '';
+        
+        if (!isNaN(numericResult)) {
+            if (numericResult > 12) { // มากกว่า 8 เป็น 'ดีมาก'
+                balanceGrade = 'เสี่ยง';
+                balanceMessage = 'มีความเสี่ยงต่อการหกล้ม';
+            } else if (numericResult === 12) { // เท่ากับ 8 เป็น 'ดี'
+                balanceGrade = 'ดี';
+                balanceMessage = 'ความสามารถในการเคลื่อนไหว และการทรงตัวปกติ ไม่มีความเสี่ยงต่อการหกล้ม';
+            } else {
+                balanceGrade = 'ดีมาก';
+                balanceMessage = 'วามสามารถในการเคลื่อนไหว และการทรงตัวดีมาก ไม่มีความเสี่ยงต่อการหกล้ม';
+            }
+        } else {
+            balanceGrade = 'ยังไม่มีข้อมูล';
+            balanceMessage = 'ยังไม่มีข้อมูล';
+        }
+
+        // แสดงผลการประเมิน
+        document.getElementById('strength-grade').textContent = strengthGrade;
+        document.getElementById('strength-message').textContent = strengthMessage;
+        document.getElementById('balance-grade').textContent = balanceGrade;
+        document.getElementById('balance-message').textContent = balanceMessage;
+    </script>
+</body>
+</html>

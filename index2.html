@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otago Test</title>
+    <link rel="stylesheet" href="/style2.css"> <!-- เชื่อมโยง CSS ของคุณ -->
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <img src="/logo.png" alt="Otago Logo">
+            </div>
+        </header>
+
+        <main class="content">
+            <h2>ทดสอบความสามารถในการทรงตัว</h2>
+
+            <div class="instructions">
+                <h3>อุปกรณ์ที่ใช้</h3>
+                <ul>
+                    <li>เก้าอี้</li>
+                    <li>ตารางบันทึกเวลา</li>
+                </ul>
+
+                <h3>วิธีการ</h3>
+                <ol>
+                    <li>วางเก้าอี้ที่มั่นคงห่างจากผนังประมาณ 3 เมตร พร้อมมีคนคอยจับเวลา</li>
+                    <li>ลุกจากเก้าอี้ เดินไปและกลับ โดยวัดระยะทางไปกลับ พร้อมบันทึกเวลา</li>
+                    <li>ทำซ้ำประมาณ 3 ครั้ง บันทึกเวลาที่ดีที่สุด</li>
+                </ol>
+            </div>
+
+            <div class="video">
+                <h2>เรียนรู้ท่าออกกำลังกาย</h2>
+                <div class="video-placeholder">
+                    <iframe width="100%" height="180" src="https://www.youtube.com/embed/poDtTNLLMwY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </div>  
+
+            <form action="/index3" method="GET" onsubmit="return validateForm()"> <!-- เพิ่มฟังก์ชัน validateForm -->
+                <label for="time">เวลาที่ใช้ (วินาที) ทดสอบความสามารถในการทรงตัว </label>
+                <input type="number" id="time" name="time" placeholder="กรอกเวลา" required>
+                <span class="error" id="time-error" style="display:none;">**โปรดใส่เวลาให้ถูกต้อง</span>
+
+                <label for="result">จำนวนครั้ง ทดสอบความแข็งแรงของกล้ามเนื้อขา </label>
+                <input type="number" id="result" name="result" placeholder="กรอกจำนวนครั้ง" required>
+
+                <button type="submit" class="submit-btn">ถัดไป</button> <!-- ปุ่มส่ง -->
+            </form>
+        </main>
+    </div>
+
+    <script>
+        function validateForm() {
+            const timeInput = document.getElementById('time');
+            const timeError = document.getElementById('time-error');
+            if (timeInput.value < 0) {
+                timeError.style.display = 'inline'; // แสดงข้อความผิดพลาด
+                return false; // ป้องกันการส่งฟอร์ม
+            }
+            timeError.style.display = 'none'; // ซ่อนข้อความผิดพลาด
+            return true; // ส่งฟอร์ม
+        }
+    </script>
+</body>
+</html>

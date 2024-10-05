@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="style8.css"> 
+
+    <script>
+        window.onload = function() {
+            var today = new Date();
+            var currentDay = today.getDay(); // รับค่าวันปัจจุบัน (0-6)
+            var currentWeek = Math.ceil(today.getDate() / 7); // คำนวณว่าสัปดาห์ที่เท่าไหร่ในเดือน (1-5)
+        
+            var cells = document.querySelectorAll('td');
+        
+            cells.forEach(function(cell) {
+                var dayDiv = cell.querySelector('.day');
+                var weekRow = cell.closest('tr').querySelector('td').textContent; // รับค่าสัปดาห์จากแถว
+        
+                if (dayDiv && cell.innerHTML.includes("ชุดที่")) {
+                    var dayNumber = parseInt(dayDiv.textContent); // รับค่าเลขวัน
+        
+                    // ตรวจสอบว่าวันและสัปดาห์ตรงกับวันปัจจุบันหรือไม่
+                    if ((currentDay === 0 && dayNumber === 7 || dayNumber === currentDay) && weekRow.includes(currentWeek)) {
+                        dayDiv.classList.add('checked');
+                    }
+                }
+            });
+        };
+        
+    </script>
+    
+</head>
+<body>
+
+    <div class="header">
+        <img src="logo1.png" alt="Otago Buddy">
+    </div>
+
+    <div class="sub-heading">
+        ประวัติการออกกำลังกาย
+    </div>
+
+    <div class="calendar-container">
+        <table class="calendar">
+            <thead>
+                <tr>
+                    <th>สัปดาห์</th>
+                    <th>จันทร์</th>
+                    <th>อังคาร</th>
+                    <th>พุธ</th>
+                    <th>พฤหัสบดี</th>
+                    <th>ศุกร์</th>
+                    <th>เสาร์</th>
+                    <th>อาทิตย์</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>สัปดาห์ที่ 1</td>
+                    <td>
+                        <div class="day orange">1</div>
+                        <h2></h2>
+                    </td>
+                    <td>
+                        <div class="day orange checked">2</div>
+                        <div>ชุดที่ 1</div>
+                    </td>
+                    <td>
+                        <div class="day orange">3</div>
+                        <h2></h2>
+                    </td>
+                    <td>
+                        <div class="day orange checked">4</div>
+                        <div>ชุดที่ 2</div>
+                    </td>
+                    <td>
+                        <div class="day orange">5</div>
+                        <h2></h2>
+                    </td>
+                    <td>
+                        <div class="day orange">6</div>
+                        <div>ชุดที่ 3</div>
+                    </td>
+                    <td>
+                        <div class="day orange">7</div>
+                        <h2></h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td>สัปดาห์ที่ 2</td>
+                    <td>
+                        <div class="day orange">8</div>
+                        <h2></h2>
+                    </td>
+                    <td>
+                        <div class="day orange">9</div>
+                        <div>ชุดที่ 1</div>
+                    </td>
+                    <td>
+                        <div class="day orange">10</div>
+                        <h2></h2>
+                    </td>
+                    <td>
+                        <div class="day orange">11</div>
+                        <div>ชุดที่ 2</div>
+                    </td>
+                    <td>
+                        <div class="day orange">12</div>
+                        <h2></h2>
+                    </td>
+                    <td>
+                        <div class="day orange">13</div>
+                        <div>ชุดที่ 3</div>
+                    </td>
+                    <td>
+                        <div class="day orange">14</div>
+                        <h2></h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td>สัปดาห์ที่ 3</td>
+                    <td>
+                        <div class="day yellow">15</div>
+                        <h2></h2>
+                    </td>
+                    <td>
+                        <div class="day yellow">16</div>
+                        <div>ชุดที่ 1</div>
+                    </td>
+                    <td>
+                        <div class="day yellow">17</div>
+                        <h2></h2>
+                    </td>
+                    <td>
+                        <div class="day yellow">18</div>
+                        <div>ชุดที่ 2</div>
+                    </td>
+                    <td>
+                        <div class="day yellow">19</div>
+                        <h2></h2>
+                    </td>
+                    <td>
+                        <div class="day yellow">20</div>
+                        <div>ชุดที่ 3</div>
+                    </td>
+                    <td>
+                        <div class="day yellow">21</div>
+                        <h2></h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td>สัปดาห์ที่ 4</td>
+                    <td>
+                        <div class="day green">22</div>
+                        <h2></h2>
+                    </td>
+                    <td>
+                        <div class="day green">23</div>
+                        <div>ชุดที่ 1</div>
+                    </td>
+                    <td>
+                        <div class="day green">24</div>
+                        <h2></h2>
+                    </td>
+                    <td>
+                        <div class="day green">25</div>
+                        <div>ชุดที่ 2</div>
+                    </td>
+                    <td>
+                        <div class="day green">26</div>
+                        <h2></h2>
+                    </td>
+                    <td>
+                        <div class="day green">27</div>
+                        <div>ชุดที่ 3</div>
+                    </td>
+                    <td>
+                        <div class="day green">28</div>
+                        <h2></h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td>สัปดาห์ที่ 5</td>
+                    <td>
+                        <div class="day green">29</div>
+                        <h2></h2>
+                    </td>
+                    <td>
+                        <div class="day green">30</div>
+                        <div>ชุดที่ 1</div>
+                    </td>
+                    <td>
+                        <div class="day green">31</div>
+                        <h2></h2>
+                    </td>
+                    <td>
+                        <div class="day green">1</div>
+                        <div>ชุดที่ 2</div>
+                    </td>
+                    <td>
+                        <div class="day green">2</div>
+                        <h2></h2>
+                    </td>
+                    <td>
+                        <div class="day green">3</div>
+                        <div>ชุดที่ 3</div>
+                    </td>
+                    <td>
+                        <div class="day green">4</div>
+                        <h2></h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td>สัปดาห์ที่ 6</td>
+                    <td>
+                        <div class="day teal">5</div>
+                        <h2></h2>
+                    </td>
+                    <td>
+                        <div class="day teal">6</div>
+                        <div>ชุดที่ 1</div>
+                    </td>
+                    <td>
+                        <div class="day teal">7</div>
+                        <h2></h2>
+                    </td>
+                    <td>
+                        <div class="day teal">8</div>
+                        <div>ชุดที่ 2</div>
+                    </td>
+                    <td>
+                        <div class="day teal">9</div>
+                        <h2></h2>
+                    </td>
+                    <td>
+                        <div class="day teal">10</div>
+                        <div>ชุดที่ 3</div>
+                    </td>
+                    <td>
+                        <div class="day teal">11</div>
+                        <h2></h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td>สัปดาห์ที่ 7</td>
+                    <td>
+                        <div class="day blue">12</div>
+                        <h2></h2>
+                    </td>
+                    <td>
+                        <div class="day blue">13</div>
+                        <div>ชุดที่ 1</div>
+                    </td>
+                    <td>
+                        <div class="day blue">14</div>
+                        <h2></h2>
+                    </td>
+                    <td>
+                        <div class="day blue">15</div>
+                        <div>ชุดที่ 2</div>
+                    </td>
+                    <td>
+                        <div class="day blue">16</div>
+                        <h2></h2>
+                    </td>
+                    <td>
+                        <div class="day blue">17</div>
+                        <div>ชุดที่ 3</div>
+                    </td>
+                    <td>
+                        <div class="day blue">18</div>
+                        <h2></h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td>สัปดาห์ที่ 8</td>
+                    <td>
+                        <div class="day blue">19</div>
+                        <h2></h2>
+                    </td>
+                    <td>
+                        <div class="day blue">20</div>
+                        <div>ชุดที่ 1</div>
+                    </td>
+                    <td>
+                        <div class="day blue">21</div>
+                        <h2></h2>
+                    </td>
+                    <td>
+                        <div class="day blue">22</div>
+                        <div>ชุดที่ 2</div>
+                    </td>
+                    <td>
+                        <div class="day blue">23</div>
+                        <h2></h2>
+                    </td>
+                    <td>
+                        <div class="day blue">24</div>
+                        <div>ชุดที่ 3</div>
+                    </td>
+                    <td>
+                        <div class="day blue">25</div>
+                        <h2></h2>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+        <!-- ปุ่มถัดไป -->
+        <div class="next-button-container">
+            <a href="/index9" class="next-button">ถัดไป</a> <!-- ใช้ลิงก์ที่ถูกต้อง -->
+        </div>
+    </div>
+</body>
+</html>
