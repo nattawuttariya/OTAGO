@@ -1,0 +1,198 @@
+/* รีเซ็ตค่าพื้นฐานของ CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #FCE8A5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* ใช้ min-height แทน height เพื่อความยืดหยุ่น */
+    padding: 10px; /* เพิ่ม padding สำหรับหน้าจอขนาดเล็ก */
+}
+
+.container {
+    background-color: white;
+    width: 100%;
+    max-width: 600px; /* จำกัดขนาดสูงสุดของคอนเทนเนอร์ */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.menu-icon img {
+    width: 30px;
+}
+
+
+.content h2 {
+    color: #d27b00; /* เปลี่ยนสีตัวอักษร */
+    font-size: 2rem; /* ขนาดฟอนต์ */
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.instructions {
+    background-color: #fff4e5;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+ul {
+    text-align: left;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+ul li {
+    font-size: 16px; /* ขยายขนาด font สำหรับรายการ */
+    margin-bottom: 5px;
+}
+
+p {
+    text-align: left;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.video-container {
+    display: flex; /* ใช้ flexbox */
+    justify-content: center; /* จัดกลางแนวนอน */
+    margin-bottom: 20px; /* ระยะห่างด้านล่าง */
+}
+
+.video img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.result {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"] {
+    width: 100%; /* ปรับขนาดให้เต็มคอนเทนเนอร์ */
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #FFCC00;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #FFAA00;
+}
+
+
+.logo img {
+    width: 150px; /* ปรับขนาดตามที่ต้องการ */
+    height: auto; /* รักษาสัดส่วน */
+    margin-bottom: 20px;
+    margin-top: -20px; /* ขยับรูปภาพขึ้น 20px */
+}
+
+.logo img {
+    position: relative; /* เพิ่มการตั้งค่า position */
+    width: 370px; /* ปรับขนาดโลโก้สำหรับหน้าจอเล็ก */
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form label {
+    color: #d27b00;
+    font-size: 14px;
+}
+
+form input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px; /* ขนาดฟอนต์ของ input */
+}
+
+form .error {
+    color: red;
+    font-size: 12px;
+    display: none; /* จะไม่แสดงเมื่อไม่มีข้อผิดพลาด */
+}
+
+form .submit-btn {
+    padding: 10px;
+    background-color: #ffcc00;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form .submit-btn:hover {
+    background-color: #e6b800; /* สีเมื่อเลื่อนเมาส์ไปที่ปุ่ม */
+}
+
+/* สำหรับหน้าจอโทรศัพท์ (ขนาดเล็กกว่า 768px) */
+@media (max-width: 768px) {
+    .logo img {
+        width: 370px; /* ขนาดโลโก้ */
+        left: -20px; /* ขยับโลโก้ไปทางซ้าย */
+    }
+}
+
+/* สำหรับหน้าจอไอแพด (ขนาดใหญ่กว่า 768px แต่ไม่เกิน 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .logo img {
+        width: 600px; /* ขนาดโลโก้ */
+        left: -20px; /* ขยับโลโก้ไปทางซ้าย */
+    }
+}
+
+/* สำหรับหน้าจอขนาดใหญ่ เช่น คอมพิวเตอร์ (1024px ขึ้นไป) */
+@media (min-width: 1025px) {
+    .logo img {
+        width: 600px; /* ข00นาดโลโก้ */
+        left: -20px; /* ย้อนกลับไปที่ค่าเริ่มต้น */
+    }
+}

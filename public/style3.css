@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7e4c9;
+    color: #333;
+}
+
+.container {
+    max-width: 768px; /* กำหนดความกว้างสูงสุด */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.logo img {
+    position: relative;
+    width: 100%; /* ให้โลโก้ขยายเต็มที่ตามคอนเทนเนอร์ */
+    margin-bottom: 20px;
+    margin-top: -30px; /* ขยับรูปภาพขึ้น 20px */
+}
+
+.back-button img {
+    height: 30px;
+}
+
+.content {
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #e6943d;
+    margin-bottom: 20px; /* เพิ่มระยะห่างด้านล่าง */
+}
+
+.test-summary {
+    background-color: #fff4e2;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+ol {
+    margin-left: 20px;
+    padding-left: 10px; /* เพิ่ม padding เพื่อทำให้เลขไม่ติดกับขอบ */
+}
+
+.result-box {
+    background-color: #fff4e2;
+    padding: 20px;
+    border: 2px solid #ff9c9c;
+    border-radius: 10px;
+    margin-bottom: 20px; /* เพิ่มระยะห่างด้านล่าง */
+}
+
+h3 {
+    color: #e6943d;
+    margin-bottom: 10px;
+}
+
+.grade {
+    color: red;
+    font-weight: bold;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+/* ปรับระยะห่างระหว่างรายการ */
+.test-summary ul, 
+.test-summary ol {
+    margin-left: 20px; /* ลดระยะห่างซ้าย */
+    padding-left: 20px; /* เพิ่ม padding ซ้าย */
+}
+
+.test-summary li {
+    margin-bottom: 5px; /* เพิ่มระยะห่างระหว่างรายการ */
+}
+
+
+
+.next-btn {
+    background-color: #e6b800; /* สีเมื่อเลื่อนเมาส์ไปที่ปุ่ม */
+    color: white; /* สีตัวอักษร */
+    border: none; /* ไม่มีขอบ */
+    padding: 10px 20px; /* ระยะห่างภายใน */
+    text-align: center; /* จัดข้อความให้อยู่กลาง */
+    text-decoration: none; /* ไม่มีการขีดเส้นใต้ */
+    display: inline-block; /* แสดงเป็นบล็อก */
+    font-size: 16px; /* ขนาดตัวอักษร */
+    margin: 4px 2px; /* ระยะห่างระหว่างปุ่ม */
+    cursor: pointer; /* แสดงลูกศรเมื่อชี้ไปที่ปุ่ม */
+    border-radius: 4px; /* มุมโค้ง */
+}
+
+.next-btn:hover {
+    background-color: #ffb700; /* สีพื้นหลังเมื่อชี้เมาส์ (เขียวเข้ม) */
+}
+
+
+/* สำหรับหน้าจอโทรศัพท์ (ขนาดเล็กกว่า 768px) */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px; /* ปรับ padding สำหรับหน้าจอเล็ก */
+    }
+
+    .logo img {
+        position: relative;
+        width: 106.5%; /* ให้โลโก้ขยายเต็มที่ตามคอนเทนเนอร์ */
+        margin-bottom: 20px;
+        margin-top: -20px; /* ขยับรูปภาพขึ้น 20px */
+        left: -3.5%; /* ปรับค่า left ให้น้อยลงเพื่อขยับไปทางซ้าย */
+    }
+
+    h2 {
+        font-size: 1.5rem; /* ปรับขนาดตัวอักษร */
+    }
+
+    .result-box {
+        padding: 15px; /* ปรับ padding ใน result-box */
+    }
+}
+
+/* สำหรับหน้าจอไอแพด (ขนาดใหญ่กว่า 768px แต่ไม่เกิน 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        max-width: 90%; /* ขยายขนาด container ให้ใหญ่ขึ้น */
+        padding: 20px; /* ปรับ padding ให้เหมาะสม */
+    }
+
+    .logo img {
+        position: relative;
+        width: 112.2%; /* ให้โลโก้ขยายเต็มที่ตามคอนเทนเนอร์ */
+        margin-bottom: 20px;
+        margin-top: -30px; /* ขยับรูปภาพขึ้น 20px */
+        left: -3.3%; /* ปรับค่า left ให้น้อยลงเพื่อขยับไปทางซ้าย */
+    }
+
+    h2 {
+        font-size: 2rem; /* ปรับขนาดตัวอักษรให้ใหญ่ขึ้น */
+    }
+
+    .result-box {
+        padding: 20px; /* เพิ่ม padding */
+    }
+}
+
+/* สำหรับหน้าจอขนาดใหญ่ เช่น คอมพิวเตอร์ (1024px ขึ้นไป) */
+@media (min-width: 1025px) {
+    .container {
+        max-width: 70%; /* ทำให้คอนเทนเนอร์เล็กลงเล็กน้อยเพื่อให้อ่านง่าย */
+        padding: 30px; /* เพิ่ม padding เพื่อเพิ่มระยะห่าง */
+    }
+
+    .logo img {
+        position: relative;
+        width: 165.4%; /* ให้โลโก้ขยายเต็มที่ตามคอนเทนเนอร์ */
+        margin-bottom: 20px;
+        margin-top: -40px; /* ขยับรูปภาพขึ้น 20px */
+        left: -4.6%; /* ปรับค่า left ให้น้อยลงเพื่อขยับไปทางซ้าย */
+    }
+    h2 {
+        font-size: 2.5rem; /* เพิ่มขนาดตัวอักษรให้เหมาะกับหน้าจอใหญ่ */
+    }
+
+    .result-box {
+        padding: 25px; /* เพิ่ม padding เพื่อให้มีพื้นที่ว่างมากขึ้น */
+    }
+}

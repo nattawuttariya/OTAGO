@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fffbe6;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* กำหนดสไตล์สำหรับโลโก้ */
+.header img {
+    width: 100vw; /* โลโก้ขยายเต็มความกว้างหน้าจอ */
+    height: auto; /* รักษาสัดส่วน */
+    margin: 0; /* ลบ margin */
+}
+
+
+.logo {
+    width: 100px;
+}
+
+.back-button {
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.title-section h1 {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.content {
+    margin-top: 20px;
+}
+
+.video-section {
+    margin-bottom: 20px;
+}
+
+.video-section h2 {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.video-placeholder {
+    width: 100%;
+    height: auto;
+    background-color: #ddd;
+    margin: 10px 0;
+}
+
+.label {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 12px;
+    padding: 5px;
+    display: inline-block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.link-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.link-list li {
+    margin-bottom: 10px;
+}
+
+.link-list a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.link-list a:hover {
+    color: #4CAF50;
+}
+
+/* เพิ่มการจัดสไตล์ปุ่มถัดไป */
+.next-button-container {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.next-button {
+    background-color: #FFA07A;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.next-button:hover {
+    background-color: #FF8C00;
+}
+
+/* สำหรับหน้าจอโทรศัพท์ (ขนาดเล็กกว่า 768px) */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px; /* ปรับ padding สำหรับหน้าจอเล็ก */
+    }
+
+.header img {
+        position: relative;
+        width: 106.5%; /* ให้โลโก้ขยายเต็มที่ตามคอนเทนเนอร์ */
+        margin-bottom: 20px;
+        margin-top: -20px; /* ขยับรูปภาพขึ้น 20px */
+        left: -3.5%; /* ปรับค่า left ให้น้อยลงเพื่อขยับไปทางซ้าย */
+    }
+
+    h2 {
+        font-size: 1.5rem; /* ปรับขนาดตัวอักษร */
+    }
+
+    .result-box {
+        padding: 15px; /* ปรับ padding ใน result-box */
+    }
+}
+
+
+/* สำหรับหน้าจอไอแพด (ขนาดใหญ่กว่า 768px แต่ไม่เกิน 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        max-width: 90%; /* ขยายขนาด container ให้ใหญ่ขึ้น */
+        padding: 20px; /* ปรับ padding ให้เหมาะสม */
+    }
+    .header img {
+        position: relative;
+        width: 106.5%; /* ให้โลโก้ขยายเต็มที่ตามคอนเทนเนอร์ */
+        margin-bottom: 20px;
+        margin-top: -20px; /* ขยับรูปภาพขึ้น 20px */
+        left: -3.5%; /* ปรับค่า left ให้น้อยลงเพื่อขยับไปทางซ้าย */
+    }
+}
+
+/* สำหรับหน้าจอขนาดใหญ่ เช่น คอมพิวเตอร์ (1024px ขึ้นไป) */
+@media (min-width: 1025px) {
+    .container {
+        max-width: 70%; /* ทำให้คอนเทนเนอร์เล็กลงเล็กน้อยเพื่อให้อ่านง่าย */
+        padding: 30px; /* เพิ่ม padding เพื่อเพิ่มระยะห่าง */
+    }
+    .header img {
+        position: relative;
+        width: 106.1%; /* ให้โลโก้ขยายเต็มที่ตามคอนเทนเนอร์ */
+        margin-bottom: 20px;
+        margin-top: -30px; /* ขยับรูปภาพขึ้น 20px */
+        left: -3%; /* ปรับค่า left ให้น้อยลงเพื่อขยับไปทางซ้าย */
+    }
+}
+
