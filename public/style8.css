@@ -176,7 +176,8 @@ body {
 /* เพิ่มการจัดสไตล์ปุ่มถัดไป */
 .next-button-container {
     text-align: right;
-    margin-top: 20px;
+    margin-top: 20px; /* ย้ายปุ่มขึ้นไป */
+    margin-top: -100px; /* ปรับค่าระยะห่างที่นี่ */
 }
 
 .next-button {
