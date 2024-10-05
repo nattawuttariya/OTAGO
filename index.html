@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Otago Test</title>
-
-        <link rel="stylesheet" href="public/style.css"> <!-- แก้ไขลิงก์ไปที่ไฟล์ CSS ในโฟลเดอร์ public -->
+    <link rel="stylesheet" href="public/style1.css"> <!-- แก้ไขลิงก์ไปที่ไฟล์ CSS ในโฟลเดอร์ public -->
 </head>
 <body>
     <div class="container">
@@ -16,31 +15,35 @@
         </div>
         
         <div class="content">
-            <h2>ระบุวันเกิดของคุณ</h2>
-            <form action="/index1" method="GET">
-                <label for="name">คุณชื่ออะไร</label>
-                <input type="text" id="name" name="name" placeholder="คุณชื่ออะไร">
+            <h2>ทดสอบความแข็งแรงของกล้ามเนื้อขา</h2>
+            
+            <div class="tools">
+                <h3>อุปกรณ์ที่ใช้</h3>
+                <ul>
+                    <li>เก้าอี้ไม่มีล้อ (ความสูงประมาณ 17 นิ้ว)</li>
+                    <li>นาฬิกาจับเวลา</li>
+                </ul>
+            </div>
+            
+            <div class="instructions">
+                <h3>วิธีการ</h3>
+                <p>1. นั่งบนเก้าอี้โดยให้มือวางบนหัวเข่า เท้าทั้ง 2 ข้างวางราบบนพื้น</p>
+                <p>2. ลุกขึ้นยืนแล้วกลับมานั่งโดยเร็วที่สุด</p>
+                <p>3. ทำซ้ำให้ได้มากที่สุดภายในเวลา 30 วินาที พร้อมนับจำนวนครั้งที่ทำสำเร็จ</p>
+            </div>
 
-                <label for="birthdate">วันเกิด</label>
-                <input type="date" id="birthdate" name="birthdate">
+<div class="video">
+    <h2>เรียนรู้ท่าออกกำลังกาย</h2>
+    <div class="video-placeholder">
+        <iframe width="320" height="180" src="https://www.youtube.com/embed/bCQBClFANkU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+</div>
+        
 
-                <label for="nickname">ชื่อเล่น</label>
-                <input type="text" id="nickname" name="nickname" placeholder="ชื่อเล่น">
-
-                <div class="gender">
-                    <label for="gender">เพศ</label>
-                    <div class="gender-options">
-                        <label>
-                            <input type="radio" name="gender" value="ชาย">
-                            ชาย
-                        </label>
-                        <label>
-                            <input type="radio" name="gender" value="หญิง">
-                            หญิง
-                        </label>
-                    </div>
-                </div>
-
+            <form action="index2.html" method="GET"> <!-- แก้ไขลิงก์ไปที่ index2.html -->
+                <label for="result">กรอกข้อมูลหน้าถัดไป</label>
+          
+        
                 <button type="submit">ถัดไป</button>
             </form>
         </div>
