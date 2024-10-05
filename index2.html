@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Otago Test</title>
-    <link rel="stylesheet" href="/style2.css"> <!-- เชื่อมโยง CSS ของคุณ -->
+    <link rel="stylesheet" href="public/style2.css"> <!-- เชื่อมโยง CSS ของคุณ -->
 </head>
 <body>
     <div class="container">
         <header class="header">
             <div class="logo">
-                <img src="/logo.png" alt="Otago Logo">
+                <img src="public/images/logo.png" alt="Otago Logo"> <!-- เส้นทางโลโก้ -->
             </div>
         </header>
 
@@ -39,7 +39,7 @@
                 </div>
             </div>  
 
-            <form action="/index3" method="GET" onsubmit="return validateForm()"> <!-- เพิ่มฟังก์ชัน validateForm -->
+            <form action="public/index3.html" method="GET" onsubmit="return validateForm()"> <!-- ปรับเส้นทางไปยัง index3.html -->
                 <label for="time">เวลาที่ใช้ (วินาที) ทดสอบความสามารถในการทรงตัว </label>
                 <input type="number" id="time" name="time" placeholder="กรอกเวลา" required>
                 <span class="error" id="time-error" style="display:none;">**โปรดใส่เวลาให้ถูกต้อง</span>
@@ -56,6 +56,8 @@
         function validateForm() {
             const timeInput = document.getElementById('time');
             const timeError = document.getElementById('time-error');
+
+            // ตรวจสอบว่าค่าเวลาน้อยกว่า 0 หรือไม่
             if (timeInput.value < 0) {
                 timeError.style.display = 'inline'; // แสดงข้อความผิดพลาด
                 return false; // ป้องกันการส่งฟอร์ม
