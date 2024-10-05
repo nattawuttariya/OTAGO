@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/style9.css"> <!-- แก้ไขลิงก์ไปที่ไฟล์ CSS ในโฟลเดอร์ public -->
+
+</head>
+<body>
+
+<div class="gallery">
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="public/images/logo.png" alt="Otago Logo"> <!-- แก้ไขลิงก์ไปที่โลโก้ในโฟลเดอร์ public/images -->
+            </div>
+        </div>
+
+        <h1>รับ GIF ฟรี เมื่อออกกำลังกาย</h1>
+
+        <!-- แสดง open.gif ถ้ามีการปลดล็อค -->
+        <div id="openGifContainer">
+            <img src="public/images/open.gif" alt="Open GIF" /> <!-- แก้ไขลิงก์ไปที่ไฟล์ GIF ในโฟลเดอร์ public/images -->
+        </div>
+
+        <!-- รายการที่ต้องปลดล็อคตามสัปดาห์ -->
+        <div class="item locked" id="itemWeek1">
+            <img src="public/images/lock-icon.png" alt="Locked" id="lockImageWeek1"> <!-- แก้ไขลิงก์ไปที่ไอคอนล็อค -->
+        </div>
+        <div class="item locked" id="itemWeek2">
+            <img src="public/images/lock-icon-1.png" alt="Locked" id="lockImageWeek2"> <!-- แก้ไขลิงก์ไปที่ไอคอนล็อค -->
+        </div>
+        <div class="item locked" id="itemWeek3">
+            <img src="public/images/lock-icon-1.png" alt="Locked" id="lockImageWeek3"> <!-- แก้ไขลิงก์ไปที่ไอคอนล็อค -->
+        </div>
+        <div class="item locked" id="itemWeek4">
+            <img src="public/images/lock-icon-1.png" alt="Locked" id="lockImageWeek4"> <!-- แก้ไขลิงก์ไปที่ไอคอนล็อค -->
+        </div>
+        <div class="item locked" id="itemWeek5">
+            <img src="public/images/lock-icon-1.png" alt="Locked" id="lockImageWeek5"> <!-- แก้ไขลิงก์ไปที่ไอคอนล็อค -->
+        </div>
+        <div class="item locked" id="itemWeek6">
+            <img src="public/images/lock-icon-1.png" alt="Locked" id="lockImageWeek6"> <!-- แก้ไขลิงก์ไปที่ไอคอนล็อค -->
+        </div>
+        <div class="item locked" id="itemWeek7">
+            <img src="public/images/lock-icon-1.png" alt="Locked" id="lockImageWeek7"> <!-- แก้ไขลิงก์ไปที่ไอคอนล็อค -->
+        </div>
+        <div class="item locked" id="itemWeek8">
+            <img src="public/images/lock-icon-1.png" alt="Locked" id="lockImageWeek8"> <!-- แก้ไขลิงก์ไปที่ไอคอนล็อค -->
+        </div>
+    </div>
+</div>
+
+<script>
+    // จำนวนวันที่ออกกำลังกายต่อสัปดาห์
+    const daysCompletedWeek1 = 3;  
+    const daysRequired = 3;  // จำนวนวันที่ต้องทำครบต่อสัปดาห์
+
+    function showGifTemporarily() {
+        const openGifContainer = document.getElementById('openGifContainer');
+        openGifContainer.style.display = 'block';  // แสดง GIF
+        setTimeout(() => {
+            openGifContainer.style.display = 'none';  // ซ่อน GIF หลังจาก 3 วินาที
+        }, 3000);  // 3000 milliseconds = 3 วินาที
+    }
+
+    // ตรวจสอบและปลดล็อคเฉพาะสัปดาห์ที่ 1
+    if (daysCompletedWeek1 >= daysRequired) {
+        document.getElementById('lockImageWeek1').src = 'public/images/unlocked-icon.png';  <!-- แก้ไขลิงก์ไปที่ไอคอนปลดล็อค -->
+        showGifTemporarily();  // แสดง open.gif เมื่อปลดล็อคสัปดาห์ที่ 1
+    }
+
+    // สำหรับสัปดาห์อื่น ๆ ยังไม่ปลดล็อค
+</script>
+</body>
+</html>

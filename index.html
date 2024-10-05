@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otago Test</title>
+
+    <link rel="stylesheet" href="public/style.css"> <!-- แก้ไขลิงก์ไปที่ไฟล์ CSS ในโฟลเดอร์ public -->
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="public/images/logo.png" alt="โลโก้"> <!-- แก้ไขลิงก์ไปที่โลโก้ในโฟลเดอร์ public/images -->
+            </div>
+        </div>
+        
+        <div class="content">
+            <h2>ระบุข้อมูล</h2>
+            <form action="index1.html" method="GET"> <!-- แก้ไขลิงก์ไปที่ index1.html -->
+                <label for="name">คุณชื่ออะไร</label>
+                <input type="text" id="name" name="name" placeholder="คุณชื่ออะไร" required> <!-- เพิ่ม required -->
+
+                <label for="birthdate">วันเกิด</label>
+                <input type="date" id="birthdate" name="birthdate" required> <!-- เพิ่ม required -->
+
+                <label for="nickname">ชื่อเล่น</label>
+                <input type="text" id="nickname" name="nickname" placeholder="ชื่อเล่น" required> <!-- เพิ่ม required -->
+
+                <div class="gender">
+                    <label for="gender">เพศ</label>
+                    <div class="gender-options">
+                        <label>
+                            <input type="radio" name="gender" value="ชาย" required>
+                            ชาย
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="หญิง" required>
+                            หญิง
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit">ถัดไป</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
