@@ -5,8 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/style9.css"> <!-- ลิงก์ไปที่ไฟล์ CSS ในโฟลเดอร์ public -->
     <title>ระบบปลดล็อค GIF</title>
+    <style>
+        /* สไตล์สำหรับ GIF */
+        #openGif {
+            display: block; /* แสดง GIF ตอนเริ่มต้น */
+            margin: auto;
+            width: 50%; /* ปรับขนาดตามที่ต้องการ */
+        }
+    </style>
 </head>
 <body>
+
+<!-- GIF ที่จะแสดงเมื่อโหลดหน้า -->
+<img src="public/images/open.gif" alt="Opening GIF" id="openGif">
 
 <div class="gallery">
     <div class="container">
@@ -61,7 +72,7 @@
     function createDownloadLink(week, imageUrl) {
         const downloadLink = document.createElement('a');
         downloadLink.href = imageUrl;
-        downloadLink.download = imageUrl; // ชื่อไฟล์ที่ต้องการให้ดาวน์โหลด
+        downloadLink.download = imageUrl.split('/').pop(); // ชื่อไฟล์ที่ต้องการให้ดาวน์โหลด
         downloadLink.innerText = 'ดาวน์โหลด';
         downloadLink.className = 'download-btn';
         document.getElementById(`itemWeek${week}`).appendChild(downloadLink);
@@ -107,6 +118,11 @@
         document.getElementById('lockImageWeek8').src = 'public/images/unlocked-icon-8.png';
         createDownloadLink(8, 'public/images/unlocked-icon-8.png');
     }
+
+    // ซ่อน GIF หลังจาก 2 วินาที
+    setTimeout(() => {
+        document.getElementById('openGif').style.display = 'none';
+    }, 2000); // ซ่อนหลังจาก 2000 มิลลิวินาที (2 วินาที)
 </script>
 
 </body>
