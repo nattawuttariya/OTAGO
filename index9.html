@@ -19,7 +19,7 @@
         <h1>รับ GIF ฟรี เมื่อออกกำลังกาย</h1>
 
         <!-- แสดง open.gif ถ้ามีการปลดล็อค -->
-        <div id="openGifContainer">
+        <div id="openGifContainer" style="display: none;"> <!-- ซ่อน GIF โดยเริ่มต้น -->
             <img src="public/images/open.gif" alt="Open GIF" />
         </div>
         
@@ -72,10 +72,19 @@
         document.getElementById(`itemWeek${week}`).appendChild(downloadLink);
     }
 
+    function showGifTemporarily() {
+        const openGifContainer = document.getElementById('openGifContainer');
+        openGifContainer.style.display = 'block'; // แสดง GIF
+        setTimeout(() => {
+            openGifContainer.style.display = 'none'; // ซ่อน GIF หลังจาก 3 วินาที
+        }, 3000); // ซ่อนหลังจาก 3000 มิลลิวินาที (3 วินาที)
+    }
+
     // ตรวจสอบการปลดล็อคแต่ละสัปดาห์
     if (daysCompletedWeek1 >= daysRequired) {
         document.getElementById('lockImageWeek1').src = 'public/images/unlocked-icon.png';
         createDownloadLink(1, 'public/images/unlocked-icon.png');
+        showGifTemporarily(); // แสดง GIF เมื่อปลดล็อคสัปดาห์ที่ 1
     }
 
     if (daysCompletedWeek2 >= daysRequired) {
@@ -112,11 +121,6 @@
         document.getElementById('lockImageWeek8').src = 'public/images/unlocked-icon-8.png';
         createDownloadLink(8, 'public/images/unlocked-icon-8.png');
     }
-
-    // ซ่อน GIF หลังจาก 3 วินาที
-    setTimeout(() => {
-        document.getElementById('openGifContainer').style.display = 'none';
-    }, 3000); // ซ่อนหลังจาก 3000 มิลลิวินาที (3 วินาที)
 </script>
 
 </body>
