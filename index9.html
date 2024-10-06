@@ -48,14 +48,14 @@
 
 <script>
     // จำนวนวันที่ออกกำลังกายต่อสัปดาห์
-    const daysCompletedWeek1 = 3;
-    const daysCompletedWeek2 = 4;
-    const daysCompletedWeek3 = 3;
-    const daysCompletedWeek4 = 5;
-    const daysCompletedWeek5 = 4; // เปลี่ยนเป็น 4
-    const daysCompletedWeek6 = 4; // เปลี่ยนเป็น 4
-    const daysCompletedWeek7 = 5; // เปลี่ยนเป็น 5
-    const daysCompletedWeek8 = 5; // เปลี่ยนเป็น 5
+    const daysCompletedWeek1 = 3; // ปลดล็อคได้
+    const daysCompletedWeek2 = 0; // ไม่ปลดล็อค
+    const daysCompletedWeek3 = 0; // ไม่ปลดล็อค
+    const daysCompletedWeek4 = 0; // ไม่ปลดล็อค
+    const daysCompletedWeek5 = 0; // ไม่ปลดล็อค
+    const daysCompletedWeek6 = 0; // ไม่ปลดล็อค
+    const daysCompletedWeek7 = 0; // ไม่ปลดล็อค
+    const daysCompletedWeek8 = 0; // ไม่ปลดล็อค
     const daysRequired = 3; // จำนวนวันที่ต้องทำครบต่อสัปดาห์
 
     function createDownloadLink(week, imageUrl) {
@@ -74,38 +74,38 @@
     }
 
     if (daysCompletedWeek2 >= daysRequired) {
-        document.getElementById('lockImageWeek2').src = 'public/images/unlocked-icon.png';
-        createDownloadLink(2, 'public/images/unlocked-icon.png');
+        document.getElementById('lockImageWeek2').src = 'public/images/unlocked-icon-2.png';
+        createDownloadLink(2, 'public/images/unlocked-icon-2.png');
     }
 
     if (daysCompletedWeek3 >= daysRequired) {
-        document.getElementById('lockImageWeek3').src = 'public/images/unlocked-icon.png';
-        createDownloadLink(3, 'public/images/unlocked-icon.png');
+        document.getElementById('lockImageWeek3').src = 'public/images/unlocked-icon-3.png';
+        createDownloadLink(3, 'public/images/unlocked-icon-3.png');
     }
 
     if (daysCompletedWeek4 >= daysRequired) {
-        document.getElementById('lockImageWeek4').src = 'public/images/unlocked-icon.png';
-        createDownloadLink(4, 'public/images/unlocked-icon.png');
+        document.getElementById('lockImageWeek4').src = 'public/images/unlocked-icon-4.png';
+        createDownloadLink(4, 'public/images/unlocked-icon-4.png');
     }
 
     if (daysCompletedWeek5 >= daysRequired) {
-        document.getElementById('lockImageWeek5').src = 'public/images/unlocked-icon.png'; // เปลี่ยนเป็น URL ของรูปที่ปลดล็อคสำหรับสัปดาห์ที่ 5
-        createDownloadLink(5, 'public/images/unlocked-icon.png'); // เปลี่ยนเป็น URL ของรูปที่ปลดล็อคสำหรับสัปดาห์ที่ 5
+        document.getElementById('lockImageWeek5').src = 'public/images/unlocked-icon-5.png';
+        createDownloadLink(5, 'public/images/unlocked-icon-5.png');
     }
 
     if (daysCompletedWeek6 >= daysRequired) {
-        document.getElementById('lockImageWeek6').src = 'public/images/unlocked-icon.png'; // เปลี่ยนเป็น URL ของรูปที่ปลดล็อคสำหรับสัปดาห์ที่ 6
-        createDownloadLink(6, 'public/images/unlocked-icon.png'); // เปลี่ยนเป็น URL ของรูปที่ปลดล็อคสำหรับสัปดาห์ที่ 6
+        document.getElementById('lockImageWeek6').src = 'public/images/unlocked-icon-6.png';
+        createDownloadLink(6, 'public/images/unlocked-icon-6.png');
     }
 
     if (daysCompletedWeek7 >= daysRequired) {
-        document.getElementById('lockImageWeek7').src = 'public/images/unlocked-icon.png'; // เปลี่ยนเป็น URL ของรูปที่ปลดล็อคสำหรับสัปดาห์ที่ 7
-        createDownloadLink(7, 'public/images/unlocked-icon.png'); // เปลี่ยนเป็น URL ของรูปที่ปลดล็อคสำหรับสัปดาห์ที่ 7
+        document.getElementById('lockImageWeek7').src = 'public/images/unlocked-icon-7.png';
+        createDownloadLink(7, 'public/images/unlocked-icon-7.png');
     }
 
     if (daysCompletedWeek8 >= daysRequired) {
-        document.getElementById('lockImageWeek8').src = 'public/images/unlocked-icon.png'; // เปลี่ยนเป็น URL ของรูปที่ปลดล็อคสำหรับสัปดาห์ที่ 8
-        createDownloadLink(8, 'public/images/unlocked-icon.png'); // เปลี่ยนเป็น URL ของรูปที่ปลดล็อคสำหรับสัปดาห์ที่ 8
+        document.getElementById('lockImageWeek8').src = 'public/images/unlocked-icon-8.png';
+        createDownloadLink(8, 'public/images/unlocked-icon-8.png');
     }
 </script>
 
