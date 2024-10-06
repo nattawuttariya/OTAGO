@@ -4,25 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendar</title>
-    <link rel="stylesheet" href="public/style8.css"> <!-- แก้ไขลิงก์ไปที่ไฟล์ CSS ในโฟลเดอร์ public -->
+    <link rel="stylesheet" href="public/style8.css">
 
     <script>
         window.onload = function() {
             var today = new Date();
-            var currentDay = today.getDay(); // รับค่าวันปัจจุบัน (0-6)
-            var currentWeek = Math.ceil(today.getDate() / 7); // คำนวณว่าสัปดาห์ที่เท่าไหร่ในเดือน (1-5)
+            var currentDay = today.getDate(); // รับค่าวันปัจจุบัน (1-31)
+            var currentMonth = today.getMonth() + 1; // เดือน (0-11)
+            var currentWeek = Math.ceil(currentDay / 7); // คำนวณว่าสัปดาห์ที่เท่าไหร่ในเดือน (1-5)
         
             var cells = document.querySelectorAll('td');
         
             cells.forEach(function(cell) {
                 var dayDiv = cell.querySelector('.day');
                 var weekRow = cell.closest('tr').querySelector('td').textContent; // รับค่าสัปดาห์จากแถว
-        
+                
                 if (dayDiv && cell.innerHTML.includes("ชุดที่")) {
                     var dayNumber = parseInt(dayDiv.textContent); // รับค่าเลขวัน
-        
+
                     // ตรวจสอบว่าวันและสัปดาห์ตรงกับวันปัจจุบันหรือไม่
-                    if ((currentDay === 0 && dayNumber === 7 || dayNumber === currentDay) && weekRow.includes(currentWeek)) {
+                    if (dayNumber === currentDay && weekRow.includes("สัปดาห์ที่ " + currentWeek)) {
                         dayDiv.classList.add('checked');
                     }
                 }
@@ -35,7 +36,7 @@
 <body>
 
     <div class="header">
-        <img src="public/images/logo1.png" alt="โลโก้"> <!-- แก้ไขลิงก์ไปที่โลโก้ในโฟลเดอร์ public/images -->
+        <img src="public/images/logo1.png" alt="โลโก้">
     </div>
 
     <div class="sub-heading">
@@ -243,77 +244,8 @@
                         <h2></h2>
                     </td>
                 </tr>
-                <tr>
-                    <td>สัปดาห์ที่ 7</td>
-                    <td>
-                        <div class="day blue">12</div>
-                        <h2></h2>
-                    </td>
-                    <td>
-                        <div class="day blue">13</div>
-                        <div>ชุดที่ 1</div>
-                    </td>
-                    <td>
-                        <div class="day blue">14</div>
-                        <h2></h2>
-                    </td>
-                    <td>
-                        <div class="day blue">15</div>
-                        <div>ชุดที่ 2</div>
-                    </td>
-                    <td>
-                        <div class="day blue">16</div>
-                        <h2></h2>
-                    </td>
-                    <td>
-                        <div class="day blue">17</div>
-                        <div>ชุดที่ 3</div>
-                    </td>
-                    <td>
-                        <div class="day blue">18</div>
-                        <h2></h2>
-                    </td>
-                </tr>
-                <tr>
-                    <td>สัปดาห์ที่ 8</td>
-                    <td>
-                        <div class="day blue">19</div>
-                        <h2></h2>
-                    </td>
-                    <td>
-                        <div class="day blue">20</div>
-                        <div>ชุดที่ 1</div>
-                    </td>
-                    <td>
-                        <div class="day blue">21</div>
-                        <h2></h2>
-                    </td>
-                    <td>
-                        <div class="day blue">22</div>
-                        <div>ชุดที่ 2</div>
-                    </td>
-                    <td>
-                        <div class="day blue">23</div>
-                        <h2></h2>
-                    </td>
-                    <td>
-                        <div class="day blue">24</div>
-                        <div>ชุดที่ 3</div>
-                    </td>
-                    <td>
-                        <div class="day blue">25</div>
-                        <h2></h2>
-                    </td>
-                </tr>
             </tbody>
         </table>
-    </div>
-
-        <!-- ปุ่มถัดไป -->
-        <div class="next-button-container">
-            <a href="index9.html" class="next-button">ถัดไป</a>
-
-        </div>
     </div>
 </body>
 </html>
