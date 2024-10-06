@@ -8,8 +8,6 @@
 </head>
 <body>
 
-
-
 <div class="gallery">
     <div class="container">
         <div class="header">
@@ -20,7 +18,7 @@
 
         <h1>รับ GIF ฟรี เมื่อออกกำลังกาย</h1>
 
-    <!-- แสดง open.gif ถ้ามีการปลดล็อค -->
+        <!-- แสดง open.gif ถ้ามีการปลดล็อค -->
         <div id="openGifContainer">
             <img src="public/images/open.gif" alt="Open GIF" />
         </div>
@@ -115,9 +113,9 @@
         createDownloadLink(8, 'public/images/unlocked-icon-8.png');
     }
 
-    // ซ่อน GIF หลังจาก 2 วินาที
+    // ซ่อน GIF หลังจาก 3 วินาที
     setTimeout(() => {
-        document.getElementById('openGif').style.display = 'none';
+        document.getElementById('openGifContainer').style.display = 'none';
     }, 3000); // ซ่อนหลังจาก 3000 มิลลิวินาที (3 วินาที)
 </script>
 
