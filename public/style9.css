@@ -2,11 +2,12 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     background-color: #f8e9c3;
+    margin: 0; /* เอาระยะขอบของ body ออก */
 }
 
 .gallery {
     max-width: 400px;
-    margin: 0 auto;
+    margin: 20px auto; /* เพิ่มระยะห่างด้านบน */
     padding: 20px;
     background-color: white;
     border-radius: 10px;
@@ -16,6 +17,7 @@ body {
 h1 {
     font-size: 24px;
     color: #333;
+    margin-bottom: 20px; /* เพิ่มระยะห่างด้านล่าง */
 }
 
 .item {
@@ -35,7 +37,7 @@ h1 {
 }
 
 .item.locked img {
-    opacity: 0.6;
+    opacity: 0.6; /* ลดความชัดเจนของรูปภาพที่ล็อค */
 }
 
 .download-btn {
@@ -81,12 +83,8 @@ h1 {
         left: -9.6%; /* ปรับค่า left ให้น้อยลงเพื่อขยับไปทางซ้าย */
     }
 
-    h2 {
-        font-size: 1.5rem; /* ปรับขนาดตัวอักษร */
-    }
-
-    .result-box {
-        padding: 15px; /* ปรับ padding ใน result-box */
+    h1 {
+        font-size: 1.5rem; /* ปรับขนาดตัวอักษรสำหรับ h1 */
     }
 
     .download-btn {
