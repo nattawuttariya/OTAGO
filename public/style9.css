@@ -7,7 +7,7 @@ body {
 
 .gallery {
     max-width: 400px;
-    margin: 20px auto; /* เพิ่มระยะห่างด้านบน */
+    margin: 40px auto; /* เพิ่มระยะห่างด้านบน */
     padding: 20px;
     background-color: white;
     border-radius: 10px;
@@ -17,7 +17,7 @@ body {
 h1 {
     font-size: 24px;
     color: #333;
-    margin-bottom: 20px; /* เพิ่มระยะห่างด้านล่าง */
+    margin: 20px 0; /* เพิ่มระยะห่างด้านบนและด้านล่าง */
 }
 
 .item {
@@ -71,22 +71,10 @@ h1 {
 
 /* สำหรับหน้าจอโทรศัพท์ (ขนาดเล็กกว่า 768px) */
 @media (max-width: 768px) {
-    .container {
-        padding: 10px; /* ปรับ padding สำหรับหน้าจอเล็ก */
-    }
-
-    .header img {
-        position: relative;
-        width: 119%; /* ให้โลโก้ขยายเต็มที่ตามคอนเทนเนอร์ */
-        margin-bottom: 20px;
-        margin-top: -30px; /* ขยับรูปภาพขึ้น 20px */
-        left: -9.6%; /* ปรับค่า left ให้น้อยลงเพื่อขยับไปทางซ้าย */
-    }
-
     h1 {
         font-size: 1.5rem; /* ปรับขนาดตัวอักษรสำหรับ h1 */
+        margin: 10px 0; /* ลดระยะห่าง */
     }
-
     .download-btn {
         font-size: 12px; /* ลดขนาดตัวอักษรสำหรับหน้าจอเล็ก */
         padding: 5px 10px; /* ปรับขนาดปุ่ม */
@@ -95,17 +83,9 @@ h1 {
 
 /* สำหรับหน้าจอไอแพด (ขนาดใหญ่กว่า 768px แต่ไม่เกิน 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
-    .container {
+    .gallery {
         max-width: 90%; /* ขยายขนาด container ให้ใหญ่ขึ้น */
         padding: 20px; /* ปรับ padding ให้เหมาะสม */
-    }
-
-    .header img {
-        position: relative;
-        width: 122.2%; /* ให้โลโก้ขยายเต็มที่ตามคอนเทนเนอร์ */
-        margin-bottom: 20px;
-        margin-top: -40px; /* ขยับรูปภาพขึ้น 20px */
-        left: -11.1%; /* ปรับค่า left ให้น้อยลงเพื่อขยับไปทางซ้าย */
     }
 
     .download-btn {
@@ -116,17 +96,9 @@ h1 {
 
 /* สำหรับหน้าจอขนาดใหญ่ เช่น คอมพิวเตอร์ (1024px ขึ้นไป) */
 @media (min-width: 1025px) {
-    .container {
+    .gallery {
         max-width: 70%; /* ทำให้คอนเทนเนอร์เล็กลงเล็กน้อยเพื่อให้อ่านง่าย */
         padding: 30px; /* เพิ่ม padding เพื่อเพิ่มระยะห่าง */
-    }
-
-    .header img {
-        position: relative;
-        width: 157.3%; /* ให้โลโก้ขยายเต็มที่ตามคอนเทนเนอร์ */
-        margin-bottom: 20px;
-        margin-top: -50px; /* ขยับรูปภาพขึ้น 20px */
-        left: -18%; /* ปรับค่า left ให้น้อยลงเพื่อขยับไปทางซ้าย */
     }
 
     .download-btn {
@@ -144,10 +116,14 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 999;  /* ให้อยู่ด้านบนสุดของเนื้อหา */
+    background-color: rgba(255, 255, 255, 0.9); /* เพิ่มพื้นหลังให้กับ GIF เพื่อให้เห็นชัด */
+    border-radius: 10px; /* เพิ่มมุมโค้งให้กับพื้นหลัง */
+    padding: 20px; /* เพิ่ม padding รอบ ๆ GIF */
 }
 
 /* กำหนดขนาดของ open.gif */
 #openGifContainer img {
-    width: 300px;  /* กำหนดความกว้างเป็น 300px */
+    max-width: 100%; /* ทำให้ขนาด GIF ไม่เกิน 100% ของคอนเทนเนอร์ */
     height: auto;  /* ให้สูงตามอัตราส่วน */
+    border-radius: 10px; /* เพิ่มมุมโค้งมนให้กับ GIF */
 }
