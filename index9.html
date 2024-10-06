@@ -5,30 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/style9.css"> <!-- ลิงก์ไปที่ไฟล์ CSS ในโฟลเดอร์ public -->
     <title>ระบบปลดล็อค GIF</title>
-    <style>
-        /* สไตล์สำหรับ GIF */
-        #openGif {
-            display: block; /* แสดง GIF ตอนเริ่มต้น */
-            position: fixed; /* ทำให้ GIF อยู่กลางหน้าจอ */
-            top: 50%; /* ตั้งตำแหน่งที่ 50% ของความสูง */
-            left: 50%; /* ตั้งตำแหน่งที่ 50% ของความกว้าง */
-            transform: translate(-50%, -50%); /* ย้าย GIF กลับไปยังกลาง */
-            width: 50%; /* ปรับขนาดตามที่ต้องการ */
-            z-index: 1000; /* ตั้งค่า z-index เพื่อให้ GIF แสดงอยู่ด้านหน้า */
-        }
-
-        /* ปรับให้ background มืดเมื่อ GIF ปรากฏ */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5); /* สีพื้นหลังเป็นสีดำและโปร่งใส */
-            z-index: 999; /* ด้านหลัง GIF */
-        }
-    </style>
 </head>
 <body>
 
@@ -138,7 +114,7 @@
     // ซ่อน GIF หลังจาก 2 วินาที
     setTimeout(() => {
         document.getElementById('openGif').style.display = 'none';
-    }, 2000); // ซ่อนหลังจาก 2000 มิลลิวินาที (2 วินาที)
+    }, 3000); // ซ่อนหลังจาก 3000 มิลลิวินาที (3 วินาที)
 </script>
 
 </body>
